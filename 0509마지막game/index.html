@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>game</title>
+
+
+	<script src="https://kit.fontawesome.com/397767baf5.js" crossorigin="anonymous"></script>
+
+	<style>
+		* {margin: 0; box-sizing: border-box;}
+		ul, li, ol {list-style: none; margin: 0; padding: 0;}
+		#wrap {width: 100%; height: auto; margin: 0 auto; border: 3px solid black;}
+		.ham > img {width: 35px; height: 35px;}
+
+		/*헤더*/
+		header {width: 100%; height: 100px; background-color: #1d1427;}
+		#main_header {width: 1430px; height: 100px; background-color: #1d1427; margin: 0 auto;}
+		#main_header {display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center;}
+
+		/*네비*/
+		nav ul {display: flex;}
+		nav ul li a {margin: 0 30px 0 30px; font-size: 20px; text-decoration: none; color: #fff;}
+		nav > .icons > li > a {margin: 0 17px 0 17px; font-size: 20px; text-decoration: none; color: #fff;}
+		nav ul li a:hover {color: orange;}
+		.home > a {color: orange;} 
+
+		
+		/*슬라이더*/
+		#slider {max-width: 100%; height: 900px; background-color: pink; background-image: url(img/slider.jpg); background-size: cover; background-position: center;}
+
+		/*슬라이더 타이틀 텍스트*/
+		#slider_title {width: 530px; height: 430px; float: left; margin: 235px 0 0 235px;}
+		#slider_title > h1 {color: #000; text-align: center; background-color: orange; width: 300px; height: 50px; margin: 0 0 20px 0; border-top-right-radius: 30px; border-bottom-left-radius: 30px;}
+		#slider_title > span {color: #fff; display: block; font-weight: bold; font-size: 65px;}
+		#slider_title > button {width: 130px; height: 45px; background-color: #fff; border: 0; font-size: 17px; margin: 80px 0 0 0;}
+		#slider_title > button:hover {background-color: orange;}
+
+		/*전체섹션*/
+		section {width: 100%; height: 4875px; background-color: #1d1427;}
+
+		/*사이트 정책*/
+		#site_policy {width: 1430px; height: 225px; margin: 0 auto; display: flex; flex-flow: row wrap; justify-content:space-around; align-items: center; }
+		.Policy_box {width: 350px; height: 60px;  border-right: 1px solid gray; display: flex; flex-flow: row wrap; justify-content: center; align-items: center;}
+		.Policy_box_last {width: 350px; height: 60px;  display: flex; flex-flow: row wrap; justify-content: center; align-items: center; }
+		.Policy_box > i {font-size: 30px; margin: 0 20px 0 0; color: #fff;}
+		.Policy_box > i:hover {color: orange;}
+		.Policy_textbox { width: 200px; height: 50px; color: #fff;}
+		.Policy_box_last > i {font-size: 32px; margin: 0 10px 0 0; color: #fff;}
+		.Policy_box_last > i:hover {color: orange;}
+
+		
+		/*인기게임,최신게임 배너-이미지*/
+		#popgame {width: 1430px; height: 350px; background-color: gold; margin: 0 auto; display: flex; flex-flow: row wrap; justify-content: space-between;}
+		.popgame_box {width: 685px; height: 350px; background-color: gray; overflow: hidden; }
+		.popgame_box > a > img {width: 100%; height: 100%; transform: scale(1); transition: all 0.5s;} 
+		.popgame_box > a > img:hover {transform: scale(1.2); cursor: pointer;}
+
+		/*인기,최신게임 배너-타이틀텍스트*/
+		.popgame_titlebox {width: 340px; height: 180px; position: relative; bottom: 260px; float: right;}
+		.popgame_titlebox > h1 {color: #000; text-align: center; background-color: orange; width: 245px; height: 40px; border-top-right-radius: 30px; border-bottom-left-radius: 30px; font-size: 27px; margin: 10px 0 10px 0;}
+		.popgame_titlebox > span {color: #fff; display: block; font-weight: bold; font-size: 35px;}
+
+		/*스페셜 카테고리*/
+		#special_category {width: 1430px; height: 800px; background-color: skyblue; margin: 0 auto; display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center;}
+		#special_category > h1 { width: 100%; text-align: center; font-size: 40px; background-color: blueviolet; margin: 100px 0 0 0;}
+		#special_category > h1:after {content: ""; display: block; width: 60px; border-bottom: 3px solid orange; margin: 20px auto;}
+
+		/*스페셜 카테고리 이미지*/
+		.cate_box {width: 446px; height: 550px; background-color: #fff; }
+		.cate_box > a > img {width: 100%; height: 100%;}
+		.cate_box > a > img:hover {opacity: 0.8;}
+
+		/*스페셜 카테고리 텍스트*/
+		.cate_textbox {width: 446px; height: 100px; background-color: rgba(61,52,69,0.6); position: relative; bottom: 104px; display: flex; flex-flow: column wrap;  justify-content: center; padding: 0 0 10px 10px;}
+		.cate_textbox > h1 > a {color: #fff; text-decoration: none;}
+		.cate_textbox > span > a {color:orange; text-decoration: none;}
+		.cate_textbox > span:after {content: ""; display: block; width: 70px; border-bottom: 3px solid orange; }
+		.cate_textbox:hover {background-color: #170e1f;}
+
+		/*상품*/
+		#our_product {width: 1430px; height: 1000px; background-color: darkgray; margin: 0 auto; display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center; }
+		#our_product > h1 { width: 100%; text-align: center; font-size: 40px; background-color: blueviolet; margin: 50px 0 0 0;}
+		#our_product > h1:after {content: ""; display: block; width: 60px; border-bottom: 3px solid orange; margin: 20px auto;}
+		.buttonbox {width: 100%; height: 100px; background-color: green; position: relative; bottom: 140px; display: flex;}
+		.buttonbox > button {width: 160px; height: 60px; }
+		.products {width: 327px; height: 327px; background-color: tomato;}
+
+
+
+
+
+		#discount {width: 1430px; height: 350px; background-color: yellowgreen; margin: 0 auto;}
+		#deal {width: 1430px; height: 845px; background-color: darkkhaki; margin: 0 auto;}
+		#banner {width: 100%; height: 530px; background-color: darksalmon; margin: 0 auto;}
+		#blog {width: 1430px; height: 625px; background-color: slateblue; margin: 0 auto;}
+		#teamlogo {width: 1430px; height: 230px; background-color: darkred; margin: 0 auto;}
+
+		/*푸터*/
+		footer {width: 100%; height: 505px; background-color: blueviolet;}
+
+	</style>
+
+
+</head>
+<body>
+
+	<div id="wrap">
+
+		<!--헤더-->
+		<header>
+			<div id="main_header">
+				<div id="small">
+					<div class="logo">
+						<img src="img/logo.png">
+					</div>
+					<div class="ham">
+						<img src="img/ham.png">
+					</div>
+				</div>
+
+				<!--네비메뉴-->
+				<nav class="a">
+					<ul>
+						<li class="home"><a href="#">Home</a></li>
+						<li><a href="#">Shop</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Media</a></li>
+						<li><a href="#">ShortCode</a></li>
+						<li><a href="#">Features</a></li>
+					</ul>
+				</nav>
+
+				<!--네비아이콘-->
+				<nav class="b">
+					<ul class="icons">				
+						<li class="icon"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+						<li class="icon"><a href="#"><i class="fa-solid fa-user"></i></a></li>
+						<li class="icon"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!--슬라이더-->
+		<div id="slider">
+			<div id="slider_title">	
+				<h1>Upcoming Stock</h1>
+				<span>Resident Evil 3</span>
+				<span>Remake</span>
+				<button type="button">Shop now</button>
+			</div>
+		</div>
+
+		<!--섹션-->
+		<section>
+
+			<!--사이트 정책-->
+			<div id="site_policy">
+				<div class="Policy_box">
+					<i class="fa-solid fa-truck"></i>
+					<div class="Policy_textbox">
+						<h4>Free Delivery</h4>
+						<span>Free Shipping On All Order</span>
+					</div>	
+				</div>
+				<div class="Policy_box">
+					<i class="fa-solid fa-sack-dollar"></i>
+					<div class="Policy_textbox">
+						<h4>Money Return</h4>
+						<span>Back Guarantee in 7 days</span>
+					</div>	
+				</div>
+				<div class="Policy_box">
+					<i class="fa-solid fa-gift"></i>
+					<div class="Policy_textbox">
+						<h4>Member Discount</h4>
+						<span>Every order over $130.00</span>
+					</div>	
+				</div>
+				<div class="Policy_box_last">
+					<i class="fa-solid fa-hand-holding-dollar"></i>
+					<div class="Policy_textbox">
+						<h4>Return Policy</h4>
+						<span>Support 24 hours a day</span>
+					</div>	
+				</div>
+			</div>
+
+			<!--인기,최신게임 배너 및 타이틀 텍스트-->
+			<div id="popgame">
+				<div class="popgame_box">
+					<a href="#"><img src="img/mostpop.jpg" alt="mostpop"></a>
+					<div class="popgame_titlebox">
+						<h1>Most Popular</h1>
+						<span>The Battlefield 4</span>
+						<span>Naval Strike</span>
+					</div>
+				</div>
+				<div class="popgame_box">
+					<a href="#"><img src="img/latest.jpg" alt="latest"></a>
+					<div class="popgame_titlebox">
+						<h1>Latest Game</h1>
+						<span>Assassin's Creed</span>
+						<span>Unity Game</span>
+					</div>
+				</div>
+			</div>
+
+			<!--스페셜 카테고리-->
+			<div id="special_category">
+				<h1>Special Category</h1>
+				<div class="cate_box">
+					<a href="#"><img src="img/category1.jpg" alt="category1"></a>
+					<div class="cate_textbox">
+						<h1><a href="#">BATTLE GROUNDS</a></h1>
+						<span><a href="#">Shop Now</a></span>
+					</div>
+
+				</div>
+				<div class="cate_box">
+					<a href="#"><img src="img/category2.jpg" alt="category2"></a>
+					<div class="cate_textbox">
+						<h1><a href="#">BATTLE FIELD</a></h1>
+						<span><a href="">Shop Now</a></span>
+					</div>
+				</div>
+				<div class="cate_box">
+					<a href="#"><img src="img/category3.jpg" alt="category3"></a>
+					<div class="cate_textbox">
+						<h1><a href="#">NEW JUMP FORCE GOKU</a></h1>
+						<span><a href="#">Shop Now</a></span>
+					</div>	
+				</div>
+			</div>
+
+			<!--상품-->
+			<div id="our_product">
+				<h1>Our Products</h1>
+				<div class="buttonbox">
+					<button>Featured</button>
+					<button>New Arrival</button>
+					<button>Best Sellers</button>
+				</div>
+
+				<div class="products"></div>
+				<div class="products"></div>
+				<div class="products"></div>
+				<div class="products"></div>		
+			</div>
+
+
+
+
+
+
+			<div id="discount"></div>
+			<div id="deal"></div>
+			<div id="banner"></div>
+			<div id="blog"></div>
+			<div id="teamlogo"></div>
+
+		</section>
+
+		<!--푸터-->
+		<footer></footer>
+
+	</div>
+
+</body>
+</html>
+
+
