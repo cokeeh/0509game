@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>game</title>
+
+
+	<script src="https://kit.fontawesome.com/397767baf5.js" crossorigin="anonymous"></script>
+
+	<style>
+		* {margin: 0; box-sizing: border-box;}
+		ul, li, ol {list-style: none; margin: 0; padding: 0;}
+		#wrap {width: 100%; height: auto; margin: 0 auto; }
+		.ham > img {width: 35px; height: 35px;}
+		/* 전체 inner로 묶음 */
+		.inner {max-width: 1430px; width: 100%; margin: 0 auto;}
+		
+		/* Our Products, Deal Of The Day 타이틀 css 공통 */
+		.title {font-size: 40px; color: #fff; background: blueviolet; text-align: center; padding-bottom: 20px; margin-top: 80px;}
+		.title::after {content: ''; width: 60px; height: 3px; background: orange; margin: 20px auto 0; display: block;}
+		
+		/* Our Products, Deal Of The Day 버튼 css 공통 */
+		.buttonbox {background: green; padding: 25px 0; display: flex; justify-content: center;}
+		.buttonbox button {width: 160px; padding: 20px 0; font-size: 17px; text-align: center; background: #1d1427; color: #fff; border: 1px solid gray; cursor: pointer;}
+		.buttonbox button:hover {color: orange;}
+
+		/* 섹션 배경색 다르게 주기위해 */
+		#our_product .pd_list {background: lightgray;}
+		#deal .pd_list {background: darkkhaki;}
+		
+		/* Our Products, Deal Of The Day 제품 리스트 css 공통 */
+		.pd_list {padding: 20px 0 70px; display: flex; justify-content: space-between; flex-flow: row wrap;}
+		.pd_list .products {width: 22.8%;}
+		.pd_list .products .products_textbox {padding: 10px 10px 25px; background: #170e1f;}
+		.products .products_textbox > .stars {display: inline-block; color: gold; background: blueviolet;}
+		.products .products_title {display: block; margin: 10px 0;}
+		.products .products_title a {color: #fff; text-decoration: none;}
+		.products .strike {color: gray; margin-right: 5px; display: inline-block;}
+		.products .price_notsale, .products .price {color: orange; display: inline-block;}
+
+		/* img 사이즈에 원본사이즈로 max-width를 주고 width:100%를 주면 반응형으로 줄였을때 알아서 같은 비율로 이미지 사이즈가 조절됩니다.*/
+		.pd_list .products img {max-width: 327px; width: 100%; display: block;}
+
+		#discount {display: flex; justify-content: space-between; flex-flow:row wrap; background: gold;}
+		#discount .discount_box {width: 47.9%; position: relative; overflow: hidden;}
+		#discount .discount_box a {width: 100%; height: 100%; display: block;}
+		#discount .discount_box img {max-width: 685px; width: 100%; display: block; transform: scale(1); transition: all 0.5s;}
+		#discount .discount_box:hover img {transform: scale(1.2);}
+		#discount .discount_titlebox {position: absolute; right: 8%; top: 50%; transform:translateY(-50%);}
+		.discount_titlebox > h1 {color: #000; text-align: center; width: 245px; height: 40px; border-radius:0 30px 0 30px; font-size: 27px; margin-bottom: 10px; background: orange;}
+		.discount_titlebox span {color: #fff; font-size: 35px; display: block; font-weight: bold;}
+	</style>
+
+
+</head>
+<body>
+
+	<div id="wrap">
+
+	
+		<!--섹션-->
+		<section>
+
+			<div class="inner">
+					<!--상품-->
+				<div id="our_product">
+					<h1 class="title">Our Products</h1>
+					<div class="buttonbox">
+						<button type="button">Featured</button>
+						<button type="button">New Arrival</button>
+						<button type="button">Best Sellers</button>
+					</div>
+
+					<div class="pd_list">
+						<div class="products">
+							<a href="#"><img src="img/item1.jpg" alt="item1"></a>
+							<div class="products_textbox">
+								<span class="stars">★ ★ ★ ★</span>
+								<span class="products_title"><a href="#">Shopping Mahjong Connect</a></span>
+								<span class="strike"><strike>£180.00</Strike></span>
+								<span class="price">£100.00</span>
+							</div>
+						</div>
+	
+						<div class="products">
+							<a href="#"><img src="img/item2.jpg" alt="item2"></a>
+							<div class="products_textbox">
+								<span class="stars">★ ★ ★</span>
+								<span class="products_title"><a href="#">BangBang Shooting</a></span>
+								<span class="price_notsale">£50.00</span>
+							</div>
+						</div>
+	
+						<div class="products">
+							<a href="#"><img src="img/item3.jpg" alt="item3"></a>
+							<div class="products_textbox">
+								<span class="stars">★ ★</span>
+								<span class="products_title"><a href="#">Buddy And Lucky Solitaire</a></span>
+								<span class="price_notsale">£90.00</span>
+							</div>
+						</div>
+	
+						<div class="products">
+							<a href="#"><img src="img/item4.jpg" alt="item4"></a>
+							<div class="products_textbox">
+								<span class="stars">★ ★ ★ ★ ★</span>
+								<span class="products_title"><a href="#">Taishou X Alice Epilogue</a></span>
+								<span class="strike"><strike>£200.00</Strike></span>
+								<span class="price">£160.00</span>
+							</div>
+						</div>		
+					</div>
+				</div>
+
+				<!--디스카운트 배너 및 타이틀 텍스트-->
+				<div id="discount">
+					<div class="discount_box">
+						<a href="#"><img src="img/discount1.jpg" alt="discoint1"></a>
+						<div class="discount_titlebox">
+							<h1>20% Discount</h1>
+							<span>Dragon's Dogma<br>Video Game</span>
+						</div>
+					</div>
+
+					<div class="discount_box">
+						<a href="#"><img src="img/discount2.jpg" alt="discount2"></a>
+						<div class="discount_titlebox">
+							<h1>30% Discount</h1>
+							<span>World Of Tanks<br>New Game</span>
+						</div>
+					</div>
+				</div>
+
+				<!--deal 상품-->
+				<div id="deal">
+					<h1 class="title">Deal Of The Day</h1>
+					<!--deal 상품 - 카운트다운 기능 나중에-->
+					<div class="buttonbox countdown_box">
+						<button type="button">DAYS</button>
+						<button type="button">HOURS</button>
+						<button type="button">MINS</button>
+						<button type="button">SECS</button>
+					</div>
+
+					<div class="pd_list">
+						<div class="deal_products products">
+							<a href="#"><img src="img/dealitem1.jpg" alt="dealitem1"></a>
+							<div class="deal_products_textbox products_textbox">
+								<span class="stars">★ ★ ★ ★ ★</span>
+								<span class="products_title"><a href="#">Martin Goes On The Attack</a></span>
+								<span class="strike"><strike>£88.00</Strike></span>
+								<span class="price">£65.00</span>
+							</div>
+						</div>
+	
+						<div class="deal_products products">
+							<a href="#"><img src="img/dealitem2.jpg" alt="dealitem2"></a>
+							<div class="deal_products_textbox products_textbox">
+								<span class="stars">★ ★ ★ ★</span>
+								<span class="products_title"><a href="#">What’s In The Window</a></span>
+								<span class="price_notsale">£70.00</span>
+							</div>
+						</div>
+	
+						<div class="deal_products products">
+							<a href="#"><img src="img/dealitem3.jpg" alt="dealitem3"></a>
+							<div class="deal_products_textbox products_textbox">
+								<span class="stars">★ ★ ★</span>
+								<span class="products_title"><a href="#">Labyrinths Of The World</a></span>
+								<span class="price_notsale">£110.00</span>
+							</div>
+						</div>
+	
+						<div class="deal_products products">
+							<a href="#"><img src="img/dealitem4.jpg" alt="dealitem4"></a>
+							<div class="deal_products_textbox products_textbox">
+								<span class="stars">★ ★ ★ ★</span>
+								<span class="products_title"><a href="#">Grand Theft Auto</a></span>
+								<span class="strike"><strike>£20.00</Strike></span>
+								<span class="price">£10.00</span>
+							</div>
+						</div>		
+					</div>
+				</div>
+
+			</div>
+		
+
+		</section>
+
+	
+	</div>
+
+</body>
+</html>
+
+
